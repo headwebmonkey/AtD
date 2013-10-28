@@ -1,8 +1,13 @@
-
-/*
- * GET home page.
- */
+exports.nlp = require("../lib/nlp.js");
+exports.engine = require("../lib/engine.js");
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+    res.send(200, "AtD is running!");
+};
+
+exports.checkDocument = function(req, res){
+    // STEP 1 - STRIP HTML:
+    var input = exports.nlp.stripHTML("Hello World! Kody J. Peterson! Hello! 1.00 is Due! Mr. Kody");
+    //STEP 2 - PROCESS DOCUMENT
+    res.send(exports.engine.processDocument(input));
 };

@@ -27,7 +27,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/checkDocument', routes.index);
+app.get('/checkDocument', routes.checkDocument);
 app.get('/checkGrammar', routes.index);
 app.get('/stats', routes.index);
 app.get('/verify', routes.index);

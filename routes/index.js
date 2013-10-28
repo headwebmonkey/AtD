@@ -7,7 +7,7 @@ exports.index = function(req, res){
 
 exports.checkDocument = function(req, res){
     // STEP 1 - STRIP HTML:
-    var input = exports.nlp.stripHTML("Hello World! Kody J. Peterson! Hello! 1.00 is Due! Mr. Kody");
+    var input = exports.nlp.stripHTML("Hello World! Kody J. Peterson!\nHello! 1.00 is Due! Mr. Kody");
     //STEP 2 - PROCESS DOCUMENT
     res.send(exports.engine.processDocument(input));
 };
